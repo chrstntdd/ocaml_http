@@ -14,13 +14,13 @@ To profile runtime server performance between the two platforms
 2. Compile and run the OCaml server (runs on port 8080)
 3. Compile with `dune build`
 4. Run the executable `./_build/default/bin/main.exe`
-5. Blast it with autocannon `bun x autocannon 'http://0.0.0.0:8080/hi`
+5. Blast it with autocannon `bun x autocannon 'http://0.0.0.0:8080/hi'`
 
 ### Node.js
 
 1. Install `node` v20.8.1 through a node version manager — like `pnpm env use --global latest`
 2. Run the server (runs on port 8081) `node server.mjs`
-3. Blast it with autocannon `bun x autocannon 'http://0.0.0.0:8081/hi`
+3. Blast it with autocannon `bun x autocannon 'http://0.0.0.0:8081/hi'`
 
 ## Results
 
