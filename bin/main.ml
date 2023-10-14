@@ -2,8 +2,7 @@ open Piaf
 open Eio.Std
 
 let connection_handler ({ request; _ } : Request_info.t Server.ctx) =
-  let url = Uri.of_string request.target in
-  match (request, Uri.path url) with
+  match (request, request.target) with
   | { Request.meth = `GET; _ }, "/hi" ->
       let headers =
         Headers.of_list
