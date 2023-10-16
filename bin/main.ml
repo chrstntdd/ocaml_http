@@ -18,7 +18,7 @@ let connection_handler ({ request; _ } : Request_info.t Server.ctx) =
       Response.of_string ~headers `Not_found ~body:""
 
 let run ~sw ~host ~port ~domains env handler =
-  let config = Server.Config.create ~domains (`Tcp (host, port)) in
+  let config = Server.Config.create ~domains ~buffer_size:0x1000 (`Tcp (host, port)) in
   let server = Server.create ~config handler in
   let command = Server.Command.start ~sw env server in
   command
